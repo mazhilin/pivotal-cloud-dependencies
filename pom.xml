@@ -36,9 +36,11 @@
         <spring-cloud.version>2020.0.2</spring-cloud.version>
         <spring-framework.version>5.3.13</spring-framework.version>
         <spring-boot-dozer.version>6.5.2</spring-boot-dozer.version>
-        <spring-boot-sureness.version>1.0.0-beta.2</spring-boot-sureness.version>
         <spring-boot-pagehelper.version>1.4.1</spring-boot-pagehelper.version>
         <spring-boot-admin.version>2.6.2</spring-boot-admin.version>
+        <spring-oauth2-server.version>1.1.1</spring-oauth2-server.version>
+        <spring-oauth2-resource.version>6.1.1</spring-oauth2-resource.version>
+        <spring-oauth2-security.version>2.3.6.RELEASE</spring-oauth2-security.version>
         <commons-io.version>2.11.0</commons-io.version>
         <commons-fileupload.version>1.4</commons-fileupload.version>
         <commons-collections.version>3.2.2</commons-collections.version>
@@ -74,7 +76,7 @@
         <pagehelper.version>5.3.0</pagehelper.version>
 
 
-        <sureness.version>1.0.5</sureness.version>
+
 
 
         <guice.version>5.0.1</guice.version>
@@ -873,6 +875,27 @@
                 <groupId>de.codecentric</groupId>
                 <artifactId>spring-boot-admin-starter-client</artifactId>
                 <version>${spring-boot-admin.version}</version>
+            </dependency>
+
+            <!--oauth2-authorization-server-->
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-oauth2-authorization-server</artifactId>
+                <version>${spring-oauth2-server.version}</version>
+            </dependency>
+
+            <!--oauth2-resource-server-->
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-oauth2-resource-server</artifactId>
+                <version>${spring-oauth2-resource.version}</version>
+            </dependency>
+
+            <!--稳定版本，替代spring security bom内置-->
+            <dependency>
+                <groupId>org.springframework.security.oauth</groupId>
+                <artifactId>spring-security-oauth2</artifactId>
+                <version>${spring-oauth2-security.version}</version>
             </dependency>
 
         </dependencies>
