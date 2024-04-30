@@ -125,6 +125,7 @@
     </distributionManagement>
 
     <build>
+        <finalName>${project.name}</finalName>
         <resources>
             <resource>
                 <directory>${basedir}/src/main/resources</directory>
@@ -184,24 +185,11 @@
                         </compilerArgs>
                     </configuration>
                 </plugin>
+                <!--spring boot 默认插件-->
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
                     <version>${spring-boot.version}</version>
-                    <configuration>
-                        <fork>true</fork>
-                        <mainClass>${start-class}</mainClass>
-                        <layout>ZIP</layout>
-                        <classifier>${project.version}</classifier>
-                        <executable>false</executable>
-                        <excludeDevtools>false</excludeDevtools>
-                        <excludes>
-                            <exclude>
-                                <groupId>org.projectlombok</groupId>
-                                <artifactId>lombok</artifactId>
-                            </exclude>
-                        </excludes>
-                    </configuration>
                     <executions>
                         <execution>
                             <goals>
